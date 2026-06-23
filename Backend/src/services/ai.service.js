@@ -46,7 +46,7 @@ async function generateInterviewReport({ resume, selfDescription, jobDescription
         contents: prompt,
         config: {
             responseMimeType: "application/json",
-            responseSchema: interviewReportSchema.toJSONSchema(),
+            responseSchema: zodToJsonSchema(interviewReportSchema),
         }
     })
 
