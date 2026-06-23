@@ -2,12 +2,12 @@ const express=require('express')
 const cookieParser=require('cookie-parser')
 const cors=require("cors")
 const rateLimit = require('express-rate-limit');
+
+const app=express()
 app.use(rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 100
 }));
-
-const app=express()
 app.use(express.json())
 app.use(cookieParser())
 app.use(cors({
